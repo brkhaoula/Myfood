@@ -1,0 +1,279 @@
+/*Télechargement de la page*/
+.loading {
+  border: $border-size $border-solid $color-secondary;
+  border-top: $border-size $border-solid $color-primary;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: load 2s linear;
+  animation-fill-mode: forwards;
+  margin: auto;
+  position: absolute;
+  top: $size;
+  left: $size;
+  bottom: $size;
+  right: $size;
+}
+/*Combinateur parent*/
+.container-accueil {
+  animation: display-contain 4s linear;
+  animation-fill-mode: forwards;
+  width: $width;
+  padding: $size;
+  margin: $size;
+  @include breakpoints(map-get($breakpoints, desktop), min) {
+    margin: auto;
+  }
+}
+.main {
+  width: $width;
+  padding: $size;
+  margin: $size;
+  background-color: $color-back;
+}
+.search {
+  text-align: center;
+  padding-bottom: 60px;
+  &__location {
+    width: $width;
+    height: 50px;
+    display: inline-block;
+    @include shadow($color-search, 0px, -1px, 2px);
+    background-color: $color-search;
+    & i {
+      margin-left: 54px;
+      margin-right: 9px;
+    }
+    & input {
+      height: 100%;
+      border: none;
+      @include police-text;
+      background-color: transparent;
+    }
+  }
+  & h1 {
+    @include police-text;
+    margin-top: 44px;
+  }
+  & p {
+    @include police-text;
+    font-weight: 400;
+  }
+}
+.function {
+  @include flex-column();
+
+  &__liste {
+    @include breakpoints(map-get($breakpoints, desktop), min) {
+      @include flex-row();
+    }
+
+    @include breakpoints(map-get($breakpoints, mobile) + 1, min) {
+      @include breakpoints(map-get($breakpoints, desktop)-1, max) {
+        @include flex-row();
+        justify-content: space-evenly;
+      }
+    }
+  }
+  background-color: $color-background;
+  padding: 50px 31px 68px 20px;
+
+  & h2 {
+    margin-left: 20px;
+    @include police-text;
+    margin-bottom: 30px;
+    @include breakpoints(map-get($breakpoints, desktop), min) {
+      margin-left: $size;
+    }
+  }
+
+  & .type {
+    display: flex;
+    height: 79px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    background-color: $color-back;
+    cursor: pointer;
+    @include shadow($color-back, 10px, 5px, 5px);
+    border-radius: 25px 25px 25px 25px;
+    &:hover {
+      transform: scale(1.05);
+    }
+    & .fa-store {
+      color: $color-primary;
+    }
+    & .fa-mobile-alt,
+    .fa-list {
+      color: $color-icone;
+    }
+    @include breakpoints(map-get($breakpoints, desktop), min) {
+      @include shadow($color-back, 0px, 0px, 0px);
+      width: 29%;
+    }
+    /*Combinateur descendant*/
+    & .chiffre {
+      color: $color-background;
+      background-color: $color-primary;
+      @include police-text;
+      text-align: center;
+      border-radius: 13px;
+      position: absolute;
+      left: -10px;
+      top: 26px;
+      width: 26px;
+      height: 23px;
+      padding-top: 3px;
+      @include breakpoints(map-get($breakpoints, desktop), min) {
+        left: -12px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        width: 10px;
+      }
+    }
+    /*Combinateur parent > enfant*/
+    & > i {
+      margin-top: 32px;
+      font-size: 20px;
+    }
+    /*Combinateur parent > enfant*/
+    & > h3 {
+      margin-top: 32px;
+      padding-right: 20px;
+      @include police-text;
+    }
+    /*Combinateur parent adjacent*/
+    & i + h3 {
+      margin-left: 28px;
+    }
+  }
+}
+.icone-color {
+  color: $color-primary;
+}
+.restaurant {
+  padding-top: 20px;
+  padding-bottom: 64px;
+  margin: 0px 20px 0px 20px;
+  @include flex-column();
+  grid-row-gap: 20px;
+  &__liste {
+    @include flex-column();
+  }
+  @include breakpoints(map-get($breakpoints, desktop), min) {
+    &__liste {
+      @include flex-row();
+      grid-row-gap: 20px;
+    }
+  }
+
+  @include breakpoints(map-get($breakpoints, mobile) + 1, min) {
+    @include breakpoints(map-get($breakpoints, desktop)-1, max) {
+      &__liste {
+        @include flex-row();
+        grid-row-gap: 20px;
+      }
+    }
+  }
+
+  & h2 {
+    @include police-text;
+  }
+
+  & h3 {
+    margin-top: 19px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    @include police-text;
+  }
+
+  & h4 {
+    font-weight: 300;
+    font-size: 15px;
+    @include police-text;
+  }
+
+  & .cards {
+    background-color: $color-background;
+    width: auto;
+    padding-bottom: 12px;
+    border-radius: 15px 15px 15px 15px;
+    position: relative;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: $color-black;
+    /*Version Desktop*/
+    @include breakpoints(map-get($breakpoints, desktop), min) {
+      width: 32%;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    /*Version tablette*/
+    @include breakpoints(map-get($breakpoints, mobile) + 1, min) {
+      @include breakpoints(map-get($breakpoints, desktop)-1, max) {
+        width: 49%;
+      }
+    }
+    /*La notification Nouveau*/
+    & .notif {
+      background-color: $color-tertiary;
+      position: absolute;
+      border: none;
+      color: $color-notif;
+      width: 80px;
+      height: 28px;
+      top: 17px;
+      right: 10px;
+      border-radius: 2px;
+      @include police-text;
+      text-align: center;
+      padding-top: 7px;
+      @include breakpoints(map-get($breakpoints, desktop), min) {
+        padding-left: $padding-left-notif;
+      }
+      @include breakpoints(map-get($breakpoints, mobile) + 1, min) {
+        @include breakpoints(map-get($breakpoints, desktop)-1, max) {
+          padding-left: $padding-left-notif;
+        }
+      }
+    }
+
+    & .description {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-right: 26px;
+      position: relative;
+      /* l'animation du coeur*/
+      &__heart {
+        & i {
+          margin-top: 25px;
+          padding-right: 2px;
+          font-size: 27px;
+        }
+        /* 1er coeur bold*/
+        & .fas {
+          position: absolute;
+          right: 1px;
+          @include animation-coeur-fas();
+        }
+        &:hover .fas {
+          @include animation-coeur-hover-fas();
+        }
+        /*2eme coeur claire*/
+        &:hover .far {
+          @include animation-coeur-hover-far();
+        }
+      }
+    }
+    & img {
+      width: $width;
+      height: 174px;
+      object-fit: cover;
+      border-radius: 15px 15px 0px 0px;
+    }
+  }
+}

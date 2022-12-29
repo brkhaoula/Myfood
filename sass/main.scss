@@ -1,0 +1,30 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./components/buttons";
+@import "./layouts/container";
+@import "./pages/container-accueil";
+@import "./base/normalize";
+  .container-bg-1 {
+    background-image: $img-back-cont1;
+  }
+  .container-bg-2 {
+    background-image: $img-back-cont2;
+  }
+  .container-bg-3 {
+    background-image: $img-back-cont3;
+  }
+  .container-bg-4 {
+    background-image: $img-back-cont4;
+  }
+
+
+
+
+
+
+
+
+
+
