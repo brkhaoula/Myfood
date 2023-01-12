@@ -52,10 +52,7 @@
 /*Fixer les breakpoints*/
 /*Régler le background de la version mobile*/
 /*Régler le background de la version desktop*/
-.header {
-  position: relative;
-}
-.header__logo {
+.logo {
   font-family: Shrikhand;
   text-align: center;
   margin: 12px 0px 12px 0px;

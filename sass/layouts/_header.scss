@@ -1,13 +1,11 @@
-.header {
-  position: relative;
-  &__logo{
+.logo{
     @include police-title;
     text-align: center;
     margin: 12px 0px 12px 0px;
     @include size-logo;
     width: 80%;
-    }
 }
+
 * {
   box-sizing: border-box;
   font-family: "Roboto";
