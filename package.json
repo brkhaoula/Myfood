@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss ./assets/css/style.css --style expanded --no-source-map",
-    "prefix": "postcss ./assets/css/style.css --use autoprefixer -d ./assets/css/prefixed/"
+    "sass": "sass --watch ./sass/main.scss ./assets/css/style.css --style expanded --no-source-map"
   },
   "author": "",
   "license": "ISC",

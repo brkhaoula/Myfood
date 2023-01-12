@@ -65,4 +65,9 @@ $breakpoints: (
   100% {
     opacity: 1;
   }
+ 
+}
+@keyframes slidein {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
 }
