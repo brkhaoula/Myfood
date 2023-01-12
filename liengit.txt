@@ -1,1 +1,2 @@
-https://github.com/brkhaoula/Myfood
+https://brkhaoula.github.io/Myfood/         lien site en ligne
+https://github.com/brkhaoula/Myfood          lien vers repository git
